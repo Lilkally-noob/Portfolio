@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", sans-serif;
+  --font-sans: "Inter", sans-serif;
+  --color-ink: #0b0e13;
+  --color-panel: #161a21;
+  --color-line: #2a2f38;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-ink);
+  color: #fff;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+.silver-text {
+  background: linear-gradient(180deg, #ffffff 0%, #8d939e 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

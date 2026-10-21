@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const fade = {
+const fade: Variants = {
   hidden: { opacity: 0, y: 30 },
-  show: (i) => ({
+  show: (i: number) => ({
     opacity: 1,
     y: 0,
     transition: { delay: i * 0.12, duration: 0.7, ease: "easeOut" },
@@ -75,7 +75,7 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.1, ease: "easeOut" }}
-          className="relative hidden h-[80vh] md:block"
+          className="relative h-[55vh] md:h-[80vh]"
         >
           <img
             src="/me.png"
@@ -85,7 +85,7 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-8 right-6 text-right md:right-12">
+      <div className="absolute bottom-8 right-6 hidden text-right md:right-12 md:block">
         <p className="text-[10px] uppercase tracking-[0.3em] text-white/40">
           Available for
         </p>

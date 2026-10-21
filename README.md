@@ -2,7 +2,7 @@
 
 Personal portfolio built to showcase my frontend work and the platform behind 4D Mav's Nation.
 
-**Live site:** https://YOUR-SITE.vercel.app
+**Live site:** https://lilkallyportfolio.vercel.app
 
 ![Portfolio preview](./public/preview.png)
 

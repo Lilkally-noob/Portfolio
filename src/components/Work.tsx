@@ -1,60 +1,117 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion'
+import collector from '../assets/collector.png'
+import mavs from '../assets/mavs-nation.png'
 
-const projects = [
+type Project = {
+  title: string
+  description: string
+  tags: string[]
+  image: string
+  url: string
+  live: string
+  repo?: string
+}
+
+const projects: Project[] = [
+  {
+    title: 'Collector',
+    description:
+      'A 3D browser game with two modes: timed Training rounds and a non-stop Endless Dash. Built from scratch with Three.js, with touch controls for mobile.',
+    tags: ['Three.js', 'Vite', 'JavaScript'],
+    image: collector,
+    url: '3d-collector-game.vercel.app',
+    live: 'https://3d-collector-game.vercel.app',
+    repo: 'https://github.com/Lilkally-noob/3d-collector-game',
+  },
   {
     title: "4D Mav's Nation",
-    tags: "Music hub · Web platform",
-    href: "#",
-    bg: "from-zinc-800 via-zinc-900 to-black",
+    description:
+      'A music hub for an underground hip-hop collective. Browse the latest releases, search tracks, and jump straight to each one on its streaming platform.',
+    tags: ['Streaming hub', 'Search', 'Dark mode'],
+    image: mavs,
+    url: '4d-mavnationstreamer.netlify.app',
+    live: 'https://4d-mavnationstreamer.netlify.app',
   },
-  {
-    title: "Collector Game",
-    tags: "3D web game · Three.js",
-    href: "#",
-    bg: "from-neutral-700 via-neutral-900 to-black",
-  },
-];
+]
 
 export default function Work() {
   return (
     <section id="work" className="mx-auto max-w-7xl px-6 py-24">
       <div className="mb-10 flex items-end justify-between">
-        <h2 className="text-xs uppercase tracking-[0.3em] text-white/60">
-          Featured work
-        </h2>
+        <h2 className="text-xs uppercase tracking-[0.3em] text-white/60">Featured work</h2>
         <a
-          href="#"
+          href="https://github.com/Lilkally-noob"
+          target="_blank"
+          rel="noreferrer"
           className="text-xs uppercase tracking-widest text-white/50 transition hover:text-white"
         >
-          Explore all projects →
+          More on GitHub ↗
         </a>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-3">
+      <div className="grid gap-8 md:grid-cols-2">
         {projects.map((p, i) => (
-          <motion.a
+          <motion.article
             key={p.title}
-            href={p.href}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.12 }}
-            whileHover={{ y: -6 }}
-            className={`group relative flex aspect-[4/5] flex-col justify-end overflow-hidden rounded-2xl border border-line bg-gradient-to-br ${p.bg} p-7`}
+            className="group overflow-hidden rounded-2xl border border-line bg-panel/70"
           >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(255,255,255,0.08),transparent_60%)]" />
-            <div className="relative">
-              <h3 className="font-display text-4xl leading-none">{p.title}</h3>
-              <p className="mt-3 text-[11px] uppercase tracking-[0.2em] text-white/50">
-                {p.tags}
-              </p>
+            <div className="flex items-center gap-3 border-b border-line bg-ink/60 px-4 py-3">
+              <div className="flex gap-1.5">
+                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+              </div>
+              <div className="flex-1 truncate rounded-md bg-white/5 px-3 py-1 text-center text-[11px] text-white/40">
+                {p.url}
+              </div>
             </div>
-            <span className="absolute bottom-6 right-6 flex h-11 w-11 items-center justify-center rounded-full border border-white/30 text-lg transition group-hover:bg-white group-hover:text-black">
-              ↗
-            </span>
-          </motion.a>
+
+            <a
+              href={p.live}
+              target="_blank"
+              rel="noreferrer"
+              className="block aspect-[16/10] overflow-hidden"
+            >
+              <img
+                src={p.image}
+                alt={`${p.title} preview`}
+                className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
+              />
+            </a>
+
+            <div className="p-7">
+              <h3 className="font-display text-4xl leading-none">{p.title}</h3>
+              <p className="mt-4 text-sm leading-relaxed text-white/60">{p.description}</p>
+
+              <ul className="mt-5 flex flex-wrap gap-2">
+                {p.tags.map((t) => (
+                  <li
+                    key={t}
+                    className="rounded-full border border-line px-3 py-1 text-[11px] uppercase tracking-widest text-white/60"
+                  >
+                    {t}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-6 flex gap-6 text-xs font-semibold uppercase tracking-widest">
+                <a href={p.live} target="_blank" rel="noreferrer" className="transition hover:text-white/70">
+                  Live site ↗
+                </a>
+                {p.repo && (
+                  <a href={p.repo} target="_blank" rel="noreferrer" className="text-white/60 transition hover:text-white">
+                    Code ↗
+                  </a>
+                )}
+              </div>
+            </div>
+          </motion.article>
         ))}
       </div>
     </section>
-  );
+  )
 }

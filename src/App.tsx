@@ -6,6 +6,7 @@ import Capabilities from "./components/Capabilities";
 import Process from "./components/Process";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import About from './components/About'
 
 export default function App() {
   return (
@@ -14,6 +15,7 @@ export default function App() {
       <Hero />
       <Stats />
       <Work />
+      <About />
       <Capabilities />
       <Process />
       <Contact />

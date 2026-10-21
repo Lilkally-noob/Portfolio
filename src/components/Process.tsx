@@ -31,7 +31,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="about" className="mx-auto max-w-7xl px-6 py-16">
+    <section id="process" className="mx-auto max-w-7xl px-6 py-16">
       <h2 className="mb-8 text-xs uppercase tracking-[0.3em] text-white/60">
         My process
       </h2>

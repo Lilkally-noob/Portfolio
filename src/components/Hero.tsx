@@ -63,11 +63,12 @@ export default function Hero() {
               View my work
             </a>
             <a
-              href="/resume.pdf"
-              className="text-xs uppercase tracking-widest text-white/60 transition hover:text-white"
-            >
-              Download resume ↓
-            </a>
+  href="/Afolabi_Habeeb_CV.pdf"
+  download="Afolabi_Habeeb_CV.pdf"
+  className="text-xs uppercase tracking-widest text-white/60 transition hover:text-white"
+>
+  Download CV ↓
+</a>
           </motion.div>
         </div>
 

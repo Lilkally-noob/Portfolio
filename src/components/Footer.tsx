@@ -12,7 +12,7 @@ const socials: SocialLink[] = [
 
 const quickLinks = ['Work', 'Capabilities', 'About', 'Contact']
 
-const email = 'you@example.com'
+const email = 'lilkallydev@gmail.com'
 
 export default function Footer() {
   return (

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
-import collector from '../assets/collector.png'
-import mavs from '../assets/mavs-nation.png'
+import collector from '../assets/collector.webp'
+import mavs from '../assets/mavs-nation.webp'
 
 type Project = {
   title: string
@@ -79,6 +79,8 @@ export default function Work() {
               <img
                 src={p.image}
                 alt={`${p.title} preview`}
+                loading="lazy"
+                decoding="async"
                 className="h-full w-full object-cover object-top transition duration-700 group-hover:scale-105"
               />
             </a>

@@ -28,7 +28,7 @@ Personal portfolio built to showcase my frontend work and the platform behind 4D
 
 ```bash
 git clone https://github.com/Lilkally-noob/Portfolio.git
-cd Portfolio 
+cd Portfolio
 npm install
 npm run dev
 ```

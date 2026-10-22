@@ -1,4 +1,5 @@
 import { motion, type Variants } from "framer-motion";
+import me from '../assets/me.webp'
 
 const fade: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -78,11 +79,14 @@ export default function Hero() {
           transition={{ duration: 1.1, ease: "easeOut" }}
           className="relative h-[55vh] md:h-[80vh]"
         >
-          <img
-            src="/me.png"
-            alt="Lilkally"
-            className="h-full w-full object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_75%,transparent)]"
-          />
+       <img
+        src={me}
+        alt="Lilkally"
+        width={1000}
+        height={1333}
+        fetchPriority="high"
+        className="h-full w-full object-contain object-bottom [mask-image:linear-gradient(to_bottom,black_75%,transparent)]"
+       />      
         </motion.div>
       </div>
 

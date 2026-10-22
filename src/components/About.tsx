@@ -34,9 +34,9 @@ export default function About() {
               TypeScript and Tailwind.
             </p>
             <p>
-              Outside client work, I run 4D Mav's Nation, a music hub that gives an underground hip-hop
-              collective one place to promote and share their releases. I also build things to learn,
-              like a 3D browser game in Three.js and a mobile marketplace app in React Native.
+             Outside client work, I run 4D Mav's Nation, a music hub that gives an underground hip-hop
+             collective one place to promote and share their releases. I also build things to learn,
+             like a 3D browser game in Three.js.
             </p>
             <p>
               I care about clean code, smooth interactions and sites that work properly on a phone,
